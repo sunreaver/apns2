@@ -119,8 +119,8 @@ func NewTokenClient(token *token.Token) *Client {
 // Development sets the Client to use the APNs development push endpoint.
 func (c *Client) Development() *Client {
 	c.Host = HostDevelopment
-	if len(os.Getenv("proxy_port")) > 0 {
-		c.Host = fmt.Sprintf("%s:%s", c.Host, os.Getenv("proxy_port"))
+	if len(os.Getenv("proxy_apple_port")) > 0 {
+		c.Host = fmt.Sprintf("%s:%s", c.Host, os.Getenv("proxy_apple_port"))
 	}
 	return c
 }
@@ -128,8 +128,8 @@ func (c *Client) Development() *Client {
 // Production sets the Client to use the APNs production push endpoint.
 func (c *Client) Production() *Client {
 	c.Host = HostProduction
-	if len(os.Getenv("proxy_port")) > 0 {
-		c.Host = fmt.Sprintf("%s:%s", c.Host, os.Getenv("proxy_port"))
+	if len(os.Getenv("proxy_apple_port")) > 0 {
+		c.Host = fmt.Sprintf("%s:%s", c.Host, os.Getenv("proxy_apple_port"))
 	}
 	return c
 }
